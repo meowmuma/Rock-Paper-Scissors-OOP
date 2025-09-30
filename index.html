@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RockPaperScissors</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+        </label>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>PaoYingChub</h1>
+            <button id="leaderboardBtn" class="leaderboard-btn">🏆 อันดับผู้เล่น</button>
+        </div>
+        
+        <div class="card player-management">
+            <h2>เมนูผู้เล่น</h2>
+            <div class="menu-item">
+                <input type="text" id="playerNameInput" placeholder="ใส่ชื่อผู้เล่น">
+                <button id="addPlayerBtn">เพิ่มผู้เล่น</button>
+            </div>
+             <div class="menu-item">
+                <input type="text" id="searchPlayerInput" placeholder="ใส่ชื่อเพื่อค้นหา/ลบ">
+                <div class="button-group">
+                    <button id="searchPlayerBtn">ค้นหา</button>
+                    <button id="deletePlayerBtn">ลบ</button>
+                </div>
+            </div>
+            <div id="playerInfo" class="player-info">กรุณาเพิ่ม หรือ ค้นหาผู้เล่น</div>
+        </div>
+
+        <div id="game-section" class="card game-section hidden">
+            <h2 id="welcomeMessage"></h2>
+            <p>เลือกอาวุธของคุณ:</p>
+            <div class="choices">
+                <button class="choice-btn" data-choice="rock">
+                    <span class="emoji">✊</span>
+                    <span class="text">ค้อน</span>
+                </button>
+                <button class="choice-btn" data-choice="paper">
+                    <span class="emoji">🖐️</span>
+                    <span class="text">กระดาษ</span>
+                </button>
+                <button class="choice-btn" data-choice="scissors">
+                    <span class="emoji">✌️</span>
+                    <span class="text">กรรไกร</span>
+                </button>
+            </div>
+            <div class="result-container">
+                <div class="choice-display">
+                    <h3>คุณเลือก</h3>
+                    <p id="playerChoiceDisplay">-</p>
+                </div>
+                <div class="choice-display">
+                    <h3>คอมพิวเตอร์เลือก</h3>
+                    <p id="computerChoiceDisplay">-</p>
+                </div>
+            </div>
+            <h2 id="resultText">ผลลัพธ์: เริ่มเกมได้!</h2>
+        </div>
+    </div>
+
+    <div id="leaderboardModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>🏆 ตารางอันดับผู้เล่น</h2>
+            <table id="leaderboardTable">
+                <thead>
+                    <tr>
+                        <th>อันดับ</th>
+                        <th>ชื่อผู้เล่น</th>
+                        <th>ชนะ</th>
+                        <th>แพ้</th>
+                        <th>เสมอ</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboardBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
